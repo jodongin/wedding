@@ -69,7 +69,7 @@ button{font-family:inherit;cursor:pointer}
 
 /* accounts */
 .accounts{background:#f6f6f6;padding:64px 24px 72px;display:flex;flex-direction:column;align-items:center;gap:8px}
-.accounts h2{margin:0 0 30px;font-size:22px;font-weight:400;color:#444}
+.accounts h2{margin:0 0 30px;font-size:clamp(19px,6.2vw,22px);font-weight:400;color:#444}
 .acc-list{width:100%;display:flex;flex-direction:column;gap:10px}
 .acc{background:#fff;border:1px solid #e3e3e3;border-radius:24px;overflow:hidden}
 .acc>button{width:100%;height:46px;border:0;background:#fff;font-size:13px;font-weight:700;color:#333}
@@ -80,6 +80,12 @@ button{font-family:inherit;cursor:pointer}
 .row .who{font-size:12px;color:#777}
 .row .num{font-size:13px;color:#333;-webkit-user-select:text;user-select:text}
 .row button{height:32px;padding:0 12px;border:1px solid #ddd;border-radius:16px;background:#fff;font-size:12px;color:#444;white-space:nowrap}
+
+/* outro */
+.outro{padding:72px 24px 88px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.outro p{margin:0;font-size:14px;line-height:2;color:#666;word-break:keep-all}
+.outro .script{font-family:'Great Vibes',cursive;font-size:36px;line-height:1.2;color:#8a8a8a}
+.outro .sign{font-size:13px;letter-spacing:2px;color:#999}
 
 /* lightbox */
 .lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;z-index:10}
@@ -108,8 +114,9 @@ button{font-family:inherit;cursor:pointer}
     <h2 class="en">OUR PROMISE</h2>
     <div class="body">
       <p>저희 두 사람, 10월 30일<br>부부가 되기로 약속합니다.</p>
-      <p>많은 분들을 모시는 예식 대신<br>부모님과 형제들, 가장 가까운 가족만 모인 자리에서<br>서로에게 작은 언약을 건네려 합니다.</p>
-      <p>직접 모시지 못하는 점 너그러이 양해 부탁드리며,<br>멀리서나마 따뜻한 마음으로 축복해 주신다면<br>그보다 더 큰 선물은 없을 것 같습니다.<br>서로 아끼고 배려하며 행복하게 살겠습니다.</p>
+      <p>많은 분들을 모시는 예식 대신<br>부모님과 형제들,<br>가장 가까운 가족만 모인 자리에서<br>서로에게 작은 언약을 건네려 합니다.</p>
+      <p>직접 모시지 못하는 점<br>너그러이 양해 부탁드리며,<br>멀리서나마 따뜻한 마음으로<br>축복해 주신다면<br>그보다 더 큰 선물은 없을 것 같습니다.</p>
+      <p>서로 아끼고 배려하며<br>행복하게 살겠습니다.</p>
       <p class="sign">조동인 · 도아라 드림</p>
     </div>
   </section>
@@ -126,7 +133,7 @@ button{font-family:inherit;cursor:pointer}
       </div>
     </div>
     <button type="button" class="ptoggle" id="ptoggle" aria-expanded="true">
-      <span>신랑 측 혼주</span><span>신부 측 혼주</span><span class="arrow" id="parrow">▲</span>
+      <span>신랑 측 부모님</span><span>신부 측 부모님</span><span class="arrow" id="parrow">▲</span>
     </button>
     <div class="grid2 parents" id="parents">
       <div class="p"><div><span class="role">아버지</span><span class="nm">조무일</span></div><div class="icons" data-phone="01027577543" data-name="조무일님"></div></div>
@@ -160,6 +167,12 @@ button{font-family:inherit;cursor:pointer}
       </div>
     </div>
   </section>
+
+  <footer class="outro">
+    <p class="script">Thank you</p>
+    <p>보내주신 마음과 축복,<br>오래도록 간직하며 살겠습니다.</p>
+    <p class="sign">동인 &amp; 아라</p>
+  </footer>
 
 </main>
 
