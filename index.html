@@ -73,12 +73,13 @@ button{font-family:inherit;cursor:pointer}
 .acc-list{width:100%;display:flex;flex-direction:column;gap:10px}
 .acc{background:#fff;border:1px solid #e3e3e3;border-radius:24px;overflow:hidden}
 .acc>button{width:100%;height:46px;border:0;background:#fff;font-size:13px;font-weight:700;color:#333}
-.acc .rows{border-top:1px solid #eee;padding:6px 18px 12px}
+.acc .rows{border-top:1px solid #eee;padding:6px 14px 12px}
 .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #f2f2f2}
 .row:last-child{border-bottom:0}
 .row .l{display:flex;flex-direction:column;gap:3px}
 .row .who{font-size:12px;color:#777}
-.row .num{font-size:13px;color:#333;-webkit-user-select:text;user-select:text}
+.row .num{font-size:clamp(12px,3.5vw,13px);color:#333;-webkit-user-select:text;user-select:text}
+.row .nw{white-space:nowrap}
 .row button{height:32px;padding:0 12px;border:1px solid #ddd;border-radius:16px;background:#fff;font-size:12px;color:#444;white-space:nowrap}
 
 /* outro */
@@ -154,15 +155,15 @@ button{font-family:inherit;cursor:pointer}
       <div class="acc">
         <button type="button" data-toggle="groom" aria-expanded="false">신랑 측 계좌번호</button>
         <div class="rows" id="groom" hidden>
-          <div class="row"><div class="l"><span class="who">아버지 · 예금주 조무일</span><span class="num">IBK기업 579-032014-01-014</span></div><button type="button" data-copy="57903201401014">계좌번호 복사</button></div>
-          <div class="row"><div class="l"><span class="who">어머니 · 예금주 유소미</span><span class="num">IBK기업 010-8836-9226</span></div><button type="button" data-copy="01088369226">계좌번호 복사</button></div>
+          <div class="row"><div class="l"><span class="who">아버지</span><span class="num"><span class="nw">IBK기업 579-032014-01-014</span> <span class="nw">조무일</span></span></div><button type="button" data-copy="57903201401014">복사</button></div>
+          <div class="row"><div class="l"><span class="who">어머니</span><span class="num"><span class="nw">IBK기업 010-8836-9226</span> <span class="nw">유소미</span></span></div><button type="button" data-copy="01088369226">복사</button></div>
         </div>
       </div>
       <div class="acc">
         <button type="button" data-toggle="bride" aria-expanded="false">신부 측 계좌번호</button>
         <div class="rows" id="bride" hidden>
-          <div class="row"><div class="l"><span class="who">아버지 · 예금주 도재근</span><span class="num">신협 132-085-723707</span></div><button type="button" data-copy="132085723707">계좌번호 복사</button></div>
-          <div class="row"><div class="l"><span class="who">어머니 · 예금주 김정화</span><span class="num">농협 356-0226-2282-43</span></div><button type="button" data-copy="3560226228243">계좌번호 복사</button></div>
+          <div class="row"><div class="l"><span class="who">아버지</span><span class="num"><span class="nw">신협 132-085-723707</span> <span class="nw">도재근</span></span></div><button type="button" data-copy="132085723707">복사</button></div>
+          <div class="row"><div class="l"><span class="who">어머니</span><span class="num"><span class="nw">농협 356-0226-2282-43</span> <span class="nw">김정화</span></span></div><button type="button" data-copy="3560226228243">복사</button></div>
         </div>
       </div>
     </div>
@@ -214,7 +215,7 @@ button{font-family:inherit;cursor:pointer}
   document.querySelectorAll('[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){
       if(!b.dataset.copy){toast('계좌번호 준비 중입니다');return;}
-      copy(b.dataset.copy).then(function(){toast('계좌번호가 복사되었습니다');b.textContent='복사됨';setTimeout(function(){b.textContent='계좌번호 복사';},2000);},
+      copy(b.dataset.copy).then(function(){toast('계좌번호가 복사되었습니다');b.textContent='복사됨';setTimeout(function(){b.textContent='복사';},2000);},
         function(){toast('복사에 실패했어요. 계좌번호를 길게 눌러 복사해주세요');});
     });
   });
